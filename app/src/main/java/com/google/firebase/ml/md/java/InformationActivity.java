@@ -38,6 +38,25 @@ public class InformationActivity extends AppCompatActivity implements View.OnCli
 
         title = findViewById(R.id.textView2);
         title.setText(SearchEngine.formatted_label);
+
+        if (SearchEngine.formatted_label.equals("Please try again"))
+            finish();
+
+        Random rand = new Random();
+        int random_num = rand.nextInt(3);
+        ImageView img = (ImageView) findViewById(R.id.fact_image);
+
+        switch(random_num) {
+            case 0:
+                img.setImageResource(R.drawable.graph_1);
+                break;
+            case 1:
+                img.setImageResource(R.drawable.graph_2);
+                break;
+            default:
+                img.setImageResource(R.drawable.graph_3);
+
+        }
     }
 
     @Override
